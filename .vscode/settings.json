@@ -1,0 +1,9 @@
+{
+  "python.defaultInterpreterPath": "D:\\python.exe",
+  "python.analysis.extraPaths": [
+    "D:\\Lib\\site-packages"
+  ],
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportMissingModuleSource": "none"
+  }
+}

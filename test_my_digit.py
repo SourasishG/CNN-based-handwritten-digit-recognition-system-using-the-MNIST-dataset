@@ -3,10 +3,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from PIL import Image
-from tensorflow.keras.models import load_model
+import tensorflow as tf
 
 # Load the trained CNN model
-model = load_model('model/digit_cnn.keras')
+model = tf.keras.models.load_model('model/digit_cnn.keras')
 
 # Open image with Pillow, convert to grayscale, and resize to 28x28
 img = Image.open('my_digit/digit.png')
@@ -42,4 +42,3 @@ plt.title(title_text)
 plt.axis('off')
 plt.savefig('outputs/my_digit_prediction.png')
 plt.close()
-
