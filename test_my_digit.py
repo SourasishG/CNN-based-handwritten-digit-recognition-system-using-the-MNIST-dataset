@@ -1,5 +1,6 @@
 # Task 11: Predict handwritten digit from custom image
 
+import os
 import numpy as np
 import matplotlib.pyplot as plt
 from PIL import Image
@@ -8,8 +9,13 @@ import tensorflow as tf
 # Load the trained CNN model
 model = tf.keras.models.load_model('model/digit_cnn.keras')
 
+# Check for digit.png or image.png in my_digit folder
+image_path = 'my_digit/digit.png'
+if not os.path.exists(image_path):
+    image_path = 'my_digit/image.png'
+
 # Open image with Pillow, convert to grayscale, and resize to 28x28
-img = Image.open('my_digit/digit.png')
+img = Image.open(image_path)
 img = img.convert('L')
 img = img.resize((28, 28))
 
